@@ -190,7 +190,7 @@ export const dictionary = {
     recommendations: 'Рекомендации',
     normalizedEvidence: 'Evidence',
     aiWorklog: 'AI Worklog',
-    worklogLead: 'Короткая безопасная выжимка процесса: без секретов, приватных данных и raw prompts.',
+    worklogLead: 'Сдачная выжимка AI-first процесса: как была поставлена задача, что делали AI-инструменты, что проверял человек и как результат доведен до публичного интерфейса.',
     noSignal: 'Нет сигнала',
     noLocation: 'Нет зоны',
     noiseLevel: 'Шум',
@@ -273,7 +273,7 @@ export const dictionary = {
     recommendations: 'Recommendations',
     normalizedEvidence: 'Evidence',
     aiWorklog: 'AI Worklog',
-    worklogLead: 'Safe curated process summary: no secrets, private data, or raw prompts.',
+    worklogLead: 'Submission-ready AI-first process summary: how the task was framed, what AI tools handled, what the human reviewed, and how the result was shipped as a public interface.',
     noSignal: 'No signal',
     noLocation: 'No zone',
     noiseLevel: 'Noise',
@@ -324,62 +324,70 @@ export const recommendationText = (recommendation: Recommendation, language: Lan
 export const worklogEntries: Record<Language, Array<{ title: string; body: string }>> = {
   ru: [
     {
-      title: '1. Формулировка задачи для AI',
-      body: 'Стартовая задача была сформулирована как полноценный интерактивный продукт: RU/EN, Docker, редактируемые данные и проверяемый вывод.',
+      title: '1. Постановка задачи AI',
+      body: 'Задача была поставлена AI как полноценное мини-приложение, а не макет: сценарий фермы, RU/EN, редактируемые данные, пересчет итогов, Docker, README и публичная проверка.',
     },
     {
       title: '2. Выбор сценария',
-      body: 'Мы сравнили два варианта и выбрали "Ферму невидимых кроликов", потому что она лучше раскрывает hidden state, noisy signals и confidence.',
+      body: 'Человек выбрал "Ферму невидимых кроликов": этот вариант лучше показывает hidden state, косвенные признаки, шум, confidence и explainable inference.',
     },
     {
-      title: '3. Product framing',
-      body: 'AI помог оформить задачу как мини-приложение принятия решения: события -> сигналы -> итог -> рекомендации.',
+      title: '3. Архитектура с AI',
+      body: 'Codex CLI помог разложить приложение на domain scoring, adapters, data modes, charts, i18n и UI. Человек зафиксировал offline-first как основной приемочный путь.',
     },
     {
-      title: '4. Архитектура',
-      body: 'Через AI разложили проект на domain scoring, adapters, data modes, i18n, charts и UI; человек зафиксировал offline-first и Live как optional.',
+      title: '4. Goal prompt',
+      body: 'После согласования логики был подготовлен подробный /goal prompt: что сделать, где лежит проект, какие non-goals, как проверять результат и какие артефакты вернуть.',
     },
     {
-      title: '5. Implementation slice',
-      body: 'После уточнения требований был собран ограниченный implementation slice: интерфейс, domain logic, adapters, тесты, Docker и README.',
+      title: '5. Реализация',
+      body: 'В /goal режиме AI coding flow собрал Vite + React + TypeScript, scoring-логику, seeded randomizer, market adapters, ECharts dashboard, Vitest checks, Docker и GitHub Actions.',
     },
     {
-      title: '6. UX iteration',
-      body: 'После ревью уточнили итоговую зону, перевод RU/EN, mobile layout, accessibility и Worklog, чтобы интерфейс читался как продукт.',
+      title: '6. UX и логика',
+      body: 'После ревью были доработаны итоговая зона, подсказки режимов, полный lifecycle события add/edit/delete, переводы RU/EN, mobile layout и читаемость Worklog.',
     },
     {
-      title: '7. Validation',
-      body: 'Проверка прошла через npm audit, typecheck, Vitest, production build, Docker и browser smoke.',
+      title: '7. Проверка',
+      body: 'Результат проверялся через npm audit, typecheck, Vitest, production build, Docker, browser smoke и отдельную CodexAPP-проверку: repo был скачан, установлен и запущен по ТЗ.',
+    },
+    {
+      title: '8. Репозиторий и деплой',
+      body: 'После ручной приемки основной GitHub repo был обновлен, GitHub Pages workflow собрал production build и опубликовал интерфейс по публичной ссылке.',
     },
   ],
   en: [
     {
-      title: '1. First AI task',
-      body: 'The initial task was framed as a full interactive product: RU/EN, Docker, editable data, and verifiable output.',
+      title: '1. AI task framing',
+      body: 'The task was given to AI as a complete mini-app, not a static mockup: farm scenario, RU/EN, editable data, recalculated output, Docker, README, and public review.',
     },
     {
       title: '2. Scenario choice',
-      body: 'We compared both scenarios and selected Invisible Rabbit Farm because it better exposes hidden state, noisy signals, and confidence.',
+      body: 'The human chose Invisible Rabbit Farm because it better demonstrates hidden state, indirect signals, noise, confidence, and explainable inference.',
     },
     {
-      title: '3. Product framing',
-      body: 'AI helped shape the brief as a decision mini-app: events -> signals -> summary -> recommendations.',
+      title: '3. AI architecture',
+      body: 'Codex CLI helped split the app into domain scoring, adapters, data modes, charts, i18n, and UI. The human kept offline-first as the primary acceptance path.',
     },
     {
-      title: '4. Architecture',
-      body: 'With AI support, the app was split into domain scoring, adapters, data modes, i18n, charts, and UI; the human decision kept it offline-first with Live optional.',
+      title: '4. Goal prompt',
+      body: 'After the logic was agreed, a detailed /goal prompt was prepared: what to build, where the project lives, non-goals, validation rules, and required artifacts.',
     },
     {
-      title: '5. Implementation slice',
-      body: 'After requirements were clarified, one bounded implementation slice was built: interface, domain logic, adapters, tests, Docker, and README.',
+      title: '5. Implementation',
+      body: 'In /goal mode, the AI coding flow produced Vite + React + TypeScript, scoring logic, seeded randomizer, market adapters, ECharts dashboard, Vitest checks, Docker, and GitHub Actions.',
     },
     {
-      title: '6. UX iteration',
-      body: 'After review, the summary zone, RU/EN translation, mobile layout, accessibility, and Worklog were adjusted so the UI reads as a product.',
+      title: '6. UX and logic',
+      body: 'After review, the summary zone, mode explanations, full add/edit/delete event lifecycle, RU/EN copy, mobile layout, and Worklog readability were refined.',
     },
     {
       title: '7. Validation',
-      body: 'Validation used npm audit, typecheck, Vitest, production build, Docker, and browser smoke.',
+      body: 'The result was checked with npm audit, typecheck, Vitest, production build, Docker, browser smoke, and a separate CodexAPP pass that cloned, installed, and ran the repo against the brief.',
+    },
+    {
+      title: '8. Repository and deploy',
+      body: 'After human acceptance, the main GitHub repo was updated, then the GitHub Pages workflow built the production bundle and published the interface at a public URL.',
     },
   ],
 }

@@ -81,7 +81,7 @@ http://localhost:4173/
 - Location risk chart.
 - Editable event table and JSON editor.
 - Recommendations based on current evidence.
-- AI Worklog with a concise, sanitized process summary.
+- AI Worklog with a concise, sanitized process summary, including `/goal` planning, repository delivery, and GitHub Pages deployment.
 
 ## Data Modes
 
@@ -153,7 +153,7 @@ Known non-blocking warning:
 
 ## AI Worklog Policy
 
-The in-app AI Worklog is intentionally curated. It explains how AI was used for task framing, architecture, UI iteration, and validation without exposing raw prompts, private discussion, secrets, credentials, or unrelated context.
+The in-app AI Worklog is intentionally curated. It explains how AI was used for task framing, architecture, `/goal` planning, UI iteration, validation, repository delivery, and GitHub Pages deployment without exposing raw prompts, private discussion, secrets, credentials, or unrelated context.
 
 ## Security And Privacy
 
@@ -212,7 +212,7 @@ docker compose down
 - Риск по зонам.
 - Полный lifecycle события: добавить, изменить, удалить, синхронизировать JSON, применить JSON.
 - Рекомендации.
-- AI Worklog внутри интерфейса.
+- AI Worklog внутри интерфейса, включая `/goal` planning, репозиторий и GitHub Pages деплой.
 
 ### Ограничения
 
