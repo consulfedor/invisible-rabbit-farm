@@ -2,6 +2,8 @@
 
 Interactive AI-first technical assignment prototype.
 
+Live interface: https://consulfedor.github.io/invisible-rabbit-farm/
+
 The scenario is intentionally simple: invisible rabbits cannot be observed directly, so the farmer works with indirect signals: missing carrots, new holes, motion sensor triggers, rustles, and footprints. The app turns those noisy events into normalized signals, confidence, location risk, recommendations, and editable JSON.
 
 This is an explainable heuristic UI prototype, not a production ML model and not a trading system.
