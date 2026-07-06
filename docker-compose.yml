@@ -1,0 +1,8 @@
+services:
+  invisible-rabbit-farm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4178:80"
+    restart: unless-stopped
